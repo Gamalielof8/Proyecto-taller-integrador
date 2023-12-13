@@ -129,9 +129,10 @@ function LoginProcesar()
     }
 }
 
-function LoginProcesar2()
+function LoginProcesar2($Usuario, $Contraseña)
 {
     $bd = obtenerConexion();
-    $sentencia = $bd->prepare("SELECT * FROM usuario WHERE USUARIO= ? AND CLAVE/CONTRASEÑA=?");
-    $sentencia->execute([$Usuario, $Contraseña]);
+    $sentencia = $bd->prepare("SELECT * FROM usuario WHERE USUARIO= ? AND 'CLAVE/CONTRASEÑA'= ? ");
+    return $sentencia->execute([$Usuario, $Contraseña]);
+
 }

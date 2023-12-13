@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/assets/logo-vt.svg" />
+    <link rel="icon" type="image/x-icon" href="public/assets/logo-vt.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fast Delivery Proyecto Académico</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
       crossorigin="anonymous"
     />
   </head>
@@ -20,11 +20,10 @@
     >
       <div class="d-flex justify-content-center">
         <img src="public/assets/Rappi_logo.png" alt="user-icon" style="height: 5rem"/>
-        <img src="public/assets/username-icon.svg" alt="username-icon" style="height: 1rem"/>
       </div>
       <div class="text-center mt-2 fw-bold"> <h2>Inicio de Sesión </h2></div>
 
-      <form action="<?=base_url("/login/Procesar")?>" method="POST">
+      
       <div class="text-white mt-4 fw-semibold shadow-sm">
       <div class="input-group mt-4">
         <div class="input-group-text bg-dark">
@@ -63,5 +62,11 @@
         <div class="fw-semibold text-secondary">Continua con Google</div>
       </div>
     </div>
+    <form action="<?=base_url("/login/Procesar")?>" method="POST">
+    <script 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+      crossorigin="anonymous">
+    </script>
   </body>
 </html>

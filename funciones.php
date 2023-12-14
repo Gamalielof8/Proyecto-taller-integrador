@@ -109,7 +109,7 @@ function obtenerConexion()
     $database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     return $database;
 }
-
+/*
 function LoginProcesar()
 {
     $UsuariosModel= new UsuariosModel();
@@ -128,6 +128,7 @@ function LoginProcesar()
         return redirect()->to(base_url('/login.php'));
     }
 }
+*/
 
 function LoginProcesar2($Usuario, $Contraseña)
 {

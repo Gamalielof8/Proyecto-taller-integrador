@@ -23,7 +23,7 @@
       </div>
       <div class="text-center mt-2 fw-bold"> <h2>Registrarse </h2></div>
 
-      <form action="autenticarlogin.php" method="post">
+      <form action="registrarusuario.php" method="post">
         <div class="text-white mt-4 fw-semibold shadow-sm">
         <div class="input-group mt-4">
           <div class="input-group-text bg-dark">

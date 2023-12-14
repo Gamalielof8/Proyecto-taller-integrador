@@ -5,7 +5,7 @@ if (!isset($_POST["Usuario"]) || !isset($_POST["Contraseña"])) {
 include_once "funciones.php";
 
 
-if ( LoginProcesar2($_POST["Usuario"], $_POST["Contraseña"]) )
+if ( LoginProcesar($_POST["Usuario"], $_POST["Contraseña"]) )
 {
     header("Location: tienda.php");
 }

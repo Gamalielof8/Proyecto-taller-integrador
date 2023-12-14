@@ -109,31 +109,19 @@ function obtenerConexion()
     $database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     return $database;
 }
-/*
-function LoginProcesar()
-{
-    $UsuariosModel= new UsuariosModel();
 
-    $Usuario= $this->request->GetVar("Usuario");
-    $Contraseña= $this->request->GetVar("Contraseña");
 
-    $UsuarioEncontrado=$UsuariosModel->getWhere(['USUARIO'=>$Usuario,'CLAVE/CONTRASEÑA'=>$Contraseña])->getRow();
-
-    if(isset($UsuarioEncontrado))
-    {
-        return redirect()->to(base_url('/tienda.php'));
-    }
-    else
-    {
-        return redirect()->to(base_url('/login.php'));
-    }
-}
-*/
-
-function LoginProcesar2($Usuario, $Contraseña)
+function LoginProcesar($Usuario, $Contraseña)
 {
     $bd = obtenerConexion();
-    $sentencia = $bd->prepare("SELECT * FROM usuario WHERE USUARIO= ? AND 'CLAVE/CONTRASEÑA'= ? ");
-    return $sentencia->execute([$Usuario, $Contraseña]);
+    $sentencia = $bd->query("SELECT * FROM usuario WHERE USUARIO= '$Usuario' AND CLAVE= '$Contraseña' ");
+    $datos=$sentencia->fetchAll();
+    return $datos;
+}
 
+function guardarUsuario($nombre, $apellidos, $usuario, $contraseña)
+{
+    $bd = obtenerConexion();
+    $sentencia = $bd->prepare("INSERT INTO usuario(NOMBRES, APELLIDOS, USUARIO, CLAVE) VALUES(?, ?, ?, ?)");
+    return $sentencia->execute([$nombre, $apellidos, $usuario, $contraseña]);
 }
